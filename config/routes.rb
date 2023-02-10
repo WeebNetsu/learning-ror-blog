@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   # to make home page available from /home
   #   get 'home', to: 'pages#home'
   #   get 'pages/about'
