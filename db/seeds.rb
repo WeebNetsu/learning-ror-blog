@@ -1,6 +1,6 @@
 # rails db:seed to run the seeds
 
-User.create(email: 'test@gmail.com', password: 'password', password_confirmation: 'password')
+User.create(email: 'test@gmail.com', password: 'password', password_confirmation: 'password', name: 'Test User')
 
 5.times do |i|
   Post.create(

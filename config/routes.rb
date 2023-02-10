@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/profile'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
   resources :posts
+
+  get '/u/:id', to: 'users#profile', as: 'user'
+
   # to make home page available from /home
   #   get 'home', to: 'pages#home'
   #   get 'pages/about'
