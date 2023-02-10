@@ -23,7 +23,11 @@
 	</head>
 
 	<body>
-		<%= render 'layouts/navbar' %>
+		<header>
+			<%= render 'layouts/navbar' %>
+			<!--  -->
+			<%= render 'layouts/alerts' %>
+		</header>
 
 		<main class="container"><%= yield %></main>
 	</body>
