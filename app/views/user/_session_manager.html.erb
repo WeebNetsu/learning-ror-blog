@@ -1,0 +1,39 @@
+<% if current_user %>
+    <li class="nav-item dropdown">
+        <a
+		class="nav-link dropdown-toggle"
+		href="#"
+		id="navbarDropdown"
+		role="button"
+		data-bs-toggle="dropdown"
+		aria-expanded="false"
+	>
+            <%= current_user.name %>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li>
+                <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item" %>
+            </li>
+
+            <li>
+                <%= link_to "New Post", new_post_path, class: "dropdown-item" %>
+            </li>
+
+            <li>
+                <hr class="dropdown-divider" />
+            </li>
+
+            <li class="nav-item">
+                <%# link_to can only make GET requests, so we need to use button %>
+                <%= button_to "Log Out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            </li>
+        </ul>
+    </li>
+<% else %>
+    <li class="nav-item">
+        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+    </li>
+<% end %>

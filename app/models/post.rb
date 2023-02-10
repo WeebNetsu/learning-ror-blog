@@ -8,4 +8,7 @@ class Post < ApplicationRecord
     minimum: 10,
     maximum: 1000
   }
+
+  #   since 1 user, many posts
+  belongs_to :user
 end
