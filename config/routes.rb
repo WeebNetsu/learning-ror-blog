@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :posts
+
+  #   /posts
+  resources :posts do
+    # /posts/comments
+    resources :comments
+  end
 
   get '/u/:id', to: 'users#profile', as: 'user'
 

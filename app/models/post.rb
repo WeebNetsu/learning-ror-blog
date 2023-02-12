@@ -11,4 +11,5 @@ class Post < ApplicationRecord
 
   #   since 1 user, many posts
   belongs_to :user
+  has_many :comments, dependent: :destroy
 end
