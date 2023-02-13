@@ -20,9 +20,11 @@
 
 		<!--  -->
 		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
 	</head>
 
 	<body>
+    <%= turbo_include_tags %>
 		<header>
 			<%= render 'layouts/navbar' %>
 			<!--  -->
